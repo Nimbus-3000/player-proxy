@@ -13,8 +13,6 @@ app.use('/api/comments/songId', createProxyMiddleware({ target: 'http://54.241.2
 app.use('/songs', createProxyMiddleware({ target: 'http://3.21.230.11:3000' }))
 app.use('/api/songId', createProxyMiddleware({ target: 'http://54.151.19.84:4001' }))
 
-app.use(express.static('client'));
+app.use(express.static(__dirname));
 
-app.listen(port, () => {
-  console.log(`listening on port ${port}`);
-});
+app.listen(port, () => console.log(`listening on port ${port}`));
